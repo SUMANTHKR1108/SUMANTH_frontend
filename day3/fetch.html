@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container"> </div>
+    <button type="submit">submit</button>
+    <div>
+        <table  id="tab">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>pdesc</th>
+            <th>Pprice</th>
+            <th>img</th>
+        </tr>
+    </table>
+    </div>
+   
+    <script>
+        const button=document.querySelector("button")
+        button.addEventListener("click",handleclick);
+       const div=document.querySelector('.container')
+       let table=document.querySelector("#tab")
+
+
+        function handleclick(){
+    
+            fetch('https://p-9x7e.onrender.com/products/products')
+            .then(response=>response.json())
+            .then(res=>{
+                console.log(res.data);
+                for(let i=0; i<res.data.length; i++){
+                    const tr=document.createElement("tr")
+                    const td1=document.createElement("td")
+                    const td2=document.createElement("td")
+                    const td3=document.createElement("td")
+                    const td4=document.createElement("td")
+                    const td5=document.createElement("td")
+
+                    td1.innerText=res.data[i]._id;
+                    td2.innerText=res.data[i].name;
+                    td3.innerText=res.data[i].pdesc;
+                    td4.innerText=res.data[i].Pprice;
+                    td5.innerText=res.data[i].img;
+                    tr.append(td1,td2,td3,td4,td5)
+                    table.append(tr)
+
+                  //  let para=document.createElement('p');
+                    // para.innerText=res.data[i]._id +"===>" +res.data[i].pName;
+                     // div.append(para);
+                }
+            })
+        }
+    </script>
+</body>
+</html>
