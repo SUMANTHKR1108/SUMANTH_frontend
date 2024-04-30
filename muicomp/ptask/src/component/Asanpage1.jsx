@@ -11,7 +11,7 @@ function Asanpage1() {
       <Row className="justify-content-center my-5">
         <Col xs={19} md={8}>
         
-          <Form style={{  marginTop:'70px', backgroundColor: 'white', paddingLeft:'10px', paddingRight:'10px',height:'40vh',  width:'90vh'}}>
+          <Form style={{  marginTop:'40px', backgroundColor: 'white', paddingLeft:'8px', paddingRight:'8px',height:'50vh',  width:'90vh'}}>
             <Row className="align-items-left">
               <Col>
                 <Form.Group className="mb-3" controlId="name">

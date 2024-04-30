@@ -5,32 +5,33 @@ import './App.css';
 // import VariationsExample3 from './component/VariationExample3'
 // import Shape from './component/Shape';
 // import Reducer from './component/Reducer';
-// import Todo from './component/Todo';
+import Todo from './component/Todo';
 // import Asanpage1 from './component/Asanpage1';
 // import Asanpage3 from './component/Asanpage3';
 // import  Wixpage from './component/Wixpage'
 // import Img from './component/Img';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 // import Portfolio from './component/Portfolio';
 // import About from './component/About';
-import { Book } from '@mui/icons-material';
+import Books from './component/Books';
+// import { Book } from '@mui/icons-material';
 function App() {
   return (
     <div >
-      {/* <Rtask/>
-      <VariationsExample3/> */}
+      {/* <Rtask/> */}
+      {/* <VariationsExample3/> */}
       {/* <Shape/> */}
-      {/* <Reducer/>
-      <Todo/> */}
+      {/* <Reducer/> */}
+      <Todo/> 
       {/* <Asanpage1/> */}
       {/* <Asnpage2/> */}
-
-      {/* <Wixpage/> */}
-      {/* <Portfolio/> */}
-      {/* <Img/> */}
       {/* <Asanpage3/> */}
-    {/* <About/> */}
-    <Book/>
+{/* <Imag2/> */}
+      {/* <Wixpage/> */}
+       {/* <Portfolio/>
+      <Img/>
+     <About/> */}
+    <Books/> 
     </div>
   )
 }

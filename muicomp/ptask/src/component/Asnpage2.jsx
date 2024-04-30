@@ -1,10 +1,5 @@
 import React from 'react';
 import { Container, Navbar, Nav, NavDropdown, Button } from 'react-bootstrap'
-// import camera_img from "../assets/image/camera.jpg"
-// import glass_img from "../assets/image/glass.jpg"
-// import water_image from "../assets/image/water.jpeg"
-
-
 const Asnpage2 = () => {
   
   return (
@@ -45,7 +40,7 @@ const Asnpage2 = () => {
     </Navbar>
 
       <div>      
-        <div className='mt-4'> <Button variant="info" style={{ backgroundColor: '#a8dadc', color: '#007bff', height: '30px', width: '90px' }} size="sm">
+        <div className='mt-4'> <Button variant="info" style={{ backgroundColor: '#a8dadc', color: '#007bff', height: '30px', width: '80px' }} size="sm">
        <b>Portfolio</b>
       </Button> </div>
       <Container className="my-5" >
