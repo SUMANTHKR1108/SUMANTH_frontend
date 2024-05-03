@@ -14,6 +14,8 @@ import  Wixpage from './component/Wixpage'
 // import Portfolio from './component/Portfolio';
 // import About from './component/About';
 import Books from './component/Books';
+import Api from './component/Api'
+import Contacts from'./component/Contacts';
 // import { Book } from '@mui/icons-material';
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
       <Img/>
      <About/> */}
     <Books/> 
+    <Api/>
+    <Contacts/>
     </div>
   )
 }
