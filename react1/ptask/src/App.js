@@ -8,7 +8,7 @@ import './App.css';
 import Todo from './component/Todo';
 // import Asanpage1 from './component/Asanpage1';
 // import Asanpage3 from './component/Asanpage3';
-// import  Wixpage from './component/Wixpage'
+import  Wixpage from './component/Wixpage'
 // import Img from './component/Img';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import Portfolio from './component/Portfolio';
@@ -27,7 +27,7 @@ function App() {
       {/* <Asnpage2/> */}
       {/* <Asanpage3/> */}
 {/* <Imag2/> */}
-      {/* <Wixpage/> */}
+      <Wixpage/>
        {/* <Portfolio/>
       <Img/>
      <About/> */}
