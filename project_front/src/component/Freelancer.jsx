@@ -12,8 +12,8 @@ import axios from "axios";
 const Freelancer = () => {
   const gridstyle = {
     minHeight: "90vh",
-    minWidth: "100vh",
-    backgroundImage: `url('https://cdn.pixabay.com/photo/2019/10/03/12/11/freelance-4523096_1280.jpg')`,
+    minWidth: "130vh",
+    backgroundImage: `url('https://cdn.shopify.com/s/files/1/0694/7143/7104/files/mr05_b_3.jpg?v=1671764718')`,
     backgroundSize: "cover",
     backgroundPosition: "Container",
     display: "flex",
@@ -60,6 +60,10 @@ const Freelancer = () => {
 
       // if (response.data.data === 1) {
       alert("Login Successful");
+      window.sessionStorage.setItem(
+        "freelancerEmail",
+        response.data.data.freelancerEmail
+      );
       navigate("/Home1");
       // } else {
       //   setErrors({ message: "Invalid email or password. Please try again" });
@@ -75,7 +79,7 @@ const Freelancer = () => {
   return (
     <>
       <Container
-        className="border mt-5 bg-white col-sm-15 col-lg-6 rounded p-4 shadow"
+        className="border mt-4 bg-white col-sm-20 col-lg-5 rounded p-6 shadow"
         id="MainLoginContainer"
         style={gridstyle}
       >

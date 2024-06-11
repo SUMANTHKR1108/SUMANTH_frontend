@@ -14,6 +14,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { FormGroup, FormControlLabel, Checkbox } from "@mui/material";
 
 function JobApplication() {
+  const [freelancerEmail, setFreelancerEmail] = useState(
+    window.sessionStorage.getItem("freelancerEmail")
+  );
   const [formData, setFormData] = useState({
     freelancerEmail: "",
     jobId: "",
@@ -64,6 +67,10 @@ function JobApplication() {
     }
   };
 
+  function handleLogout() {
+    window.sessionStorage.clear();
+  }
+
   return (
     <>
       <Navbar
@@ -97,6 +104,7 @@ function JobApplication() {
                 <Button
                   className="btn btn-outline-success me-2"
                   style={{ color: "black", borderColor: "black" }}
+                  onClick={handleLogout}
                 >
                   LogOut
                 </Button>
@@ -138,7 +146,8 @@ function JobApplication() {
                   type="email"
                   name="freelancerEmail"
                   placeholder="xyz@gmail.com"
-                  value={formData.freelancerEmail}
+                  value={freelancerEmail}
+                  disabled
                   onChange={handleChange}
                 />
               </Form.Group>

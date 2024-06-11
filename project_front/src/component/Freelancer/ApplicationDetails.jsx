@@ -22,8 +22,7 @@ import {
 export default function ApplicationsDetails() {
   const [jobId, setJobId] = useState("");
   const [formData, setFormData] = useState([]);
-
-  // const [freelancerEmail, setFreelancerEmail] = useState("");
+  const [selectedRowIndex, setSelectedRowIndex] = useState(null);
 
   const findApplication = () => {
     axios
@@ -31,15 +30,14 @@ export default function ApplicationsDetails() {
       .then((response) => {
         console.log("Data fetched successfully:", response.data);
         setFormData(response.data.data);
-        // setEmail(response.data.data.freelancerEmail);
-        // setJobId(response.data.data.jobId);
+        setSelectedRowIndex(null);
       })
       .catch((error) => {
         console.error("Failed to fetch data:", error);
       });
   };
 
-  const applicationStatus = (freelancerEmail) => {
+  const applicationStatus = (freelancerEmail, index) => {
     const status = "ACCEPT";
     console.log(freelancerEmail, jobId, status);
     axios
@@ -50,17 +48,18 @@ export default function ApplicationsDetails() {
       })
       .then((response) => {
         console.log("Status Updated", response);
-
         console.log(response.data.data);
         if (response.data.data === "updated") {
           alert("Accepted the application");
+          setSelectedRowIndex(index);
         }
       })
       .catch((error) => {
-        console.log("Error while updatingg", error);
+        console.log("Error while updating", error);
       });
   };
-  const declineApplicationStatus = (freelancerEmail) => {
+
+  const declineApplicationStatus = (freelancerEmail, index) => {
     const status = "DECLINE";
     console.log(freelancerEmail, jobId, status);
     axios
@@ -71,14 +70,14 @@ export default function ApplicationsDetails() {
       })
       .then((response) => {
         console.log("Status Updated", response);
-
         console.log(response.data.data);
         if (response.data.data === "updated") {
-          alert("Declined the application!!");
+          alert("Declined the application");
+          setSelectedRowIndex(index);
         }
       })
       .catch((error) => {
-        console.log("Error while updatingg", error);
+        console.log("Error while updating", error);
       });
   };
 
@@ -111,12 +110,12 @@ export default function ApplicationsDetails() {
             onChange={(e) => setJobId(e.target.value)}
             sx={{ "& > :not(style)": { m: 2, width: "25ch" } }}
           />
-          <Button variant="contained" sx={{ m: 3 }} onClick={findApplication}>
+          <Button variant="contained" sx={{ m: 2 }} onClick={findApplication}>
             Search
           </Button>
         </Box>
 
-        <Container sx={{ marginTop: "3rem" }}>
+        <Container sx={{ marginTop: "2rem" }}>
           <TableContainer component={Paper}>
             <Table>
               <TableHead>
@@ -146,8 +145,9 @@ export default function ApplicationsDetails() {
                         <Button
                           variant="contained"
                           color="primary"
+                          disabled={selectedRowIndex === index} // Disable if row is selected
                           onClick={() => {
-                            applicationStatus(row.freelancerEmail);
+                            applicationStatus(row.freelancerEmail, index);
                           }}
                         >
                           Accept
@@ -155,8 +155,12 @@ export default function ApplicationsDetails() {
                         <Button
                           variant="contained"
                           color="primary"
+                          disabled={selectedRowIndex === index} // Disable if row is selected
                           onClick={() => {
-                            declineApplicationStatus(row.freelancerEmail);
+                            declineApplicationStatus(
+                              row.freelancerEmail,
+                              index
+                            );
                           }}
                         >
                           Decline

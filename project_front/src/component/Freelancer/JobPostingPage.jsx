@@ -140,8 +140,8 @@ function JobPostingPage() {
           marginBottom: "5px",
         }}
       >
-        <h4>Welcome {name}</h4>
-        JOB POSTING DETAILS
+        <h4> {name}WELCOME TO </h4>
+        JOB POSTING DETAILS PAGE
       </p>
 
       <Container

@@ -41,8 +41,7 @@ function Home1() {
         job.titel.toLowerCase().includes(searchTerm.toLowerCase())) ||
       (job.description &&
         job.description.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (job.createdAt &&
-        job.createdAt.toLowerCase().includes(searchTerm.toLowerCase()))
+      (job.jobId && job.jobId.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
   return (
